@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(216, 216, 216);
+    background-color: rgb(24, 24, 24);
+}
+
+header{
+    text-align: center;
+    margin: 50px auto;
+    font-size: 150%;
+    font-family: "Orbitron", sans-serif;
+    color: #ffea70;
+}
+
+main{
+    margin: 0 auto;
+    font-size: .9rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.section_left{
+    width: 20%;
+    text-align: right;
+    /* justify-content: center; */
+    border: 1px solid #999;
+}
+
+.section_left h2{
+    margin-right: 25px;
+    font-size: small;
+}
+
+.section_right{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    gap: 15px;
+}
+
+.card{
+    line-height: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;
+    padding: 1vh 2vw;
+    flex-grow: 1;
+}
+
+/* Most popular transition */
+
+#mostPopular .card{
+    border: 1px solid #d8c65d;
+    color: #e2e2e2;
+    background: transparent;
+    transition: color, background .9s;
+}
+
+#mostPopular .card:hover{
+    color: #131313;
+    background: #d8c65d;
+}
+
+/* Secondary transition */
+
+#secondary .card{
+    border: 1px solid #94d85d;
+    color: #e2e2e2;
+    background: transparent;
+    transition: color, background .9s;
+}
+
+#secondary .card:hover{
+    color: #131313;
+    background: #94d85d;
+}
+
+/* Others transition */
+
+#others .card{
+    border: 1px solid #85a6ee;
+    color: #e2e2e2;
+    background: transparent;
+    transition: color, background .9s;
+}
+
+#others .card:hover{
+    color: #131313;
+    background: #85a6ee;
+}
+
+/* Media */
+
+@media (min-width:768px){
+    .card{
+        width: 40%;
+    }
+}
+
+@media (min-width:1200px){
+    .card{
+        width: 30%;
+    }
+}
