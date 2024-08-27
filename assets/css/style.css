@@ -66,6 +66,7 @@ section{
     width: 50%;
     padding: 1vh 2vw;
     flex-grow: 1;
+    touch-action: manipulation;
 }
 
 /* Most popular transition */
