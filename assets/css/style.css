@@ -83,7 +83,7 @@ span{
     transition: box-shadow .1s ease-in;
 }
 
-#mostPopular .card:hover {
+#mostPopular .card:hover, .card:active {
     box-shadow: 0 0 10px #c7bb75;
 }
 
