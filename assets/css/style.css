@@ -1,23 +1,23 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(216, 216, 216);
     background-color: rgb(24, 24, 24);
 }
 
-header{
+header {
     text-align: center;
     margin: 50px auto;
     font-size: 150%;
     font-family: "Orbitron", sans-serif;
-    color: #ffea70;
+    color: #ffee8d;
 }
 
-main{
+main {
     margin: 5% auto 20% auto;
     font-size: .9rem;
     width: 80%;
@@ -26,101 +26,99 @@ main{
     gap: 50px;
 }
 
-section{
+section {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
     align-items: stretch;
 }
 
-.section_left{
+.section_left {
     position: relative;
     width: 20%;
     text-align: right;
-    border-left: 1px solid #353535;
+    border-left: 2px dashed #ffea7036;
 }
 
-.section_left h2{
+.section_left h2 {
     margin: auto 20px;
     font-size: 0.75rem;
 }
 
-.section_left span{
+.section_left span {
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 10%;
 }
 
-.section_right{
+.section_right {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;
-    gap: 15px;
+    gap: 20px;
 }
 
-.card{
-    line-height: 1.5rem;
+.card {
+    line-height: 20px;
     border-radius: 10px;
     cursor: pointer;
     width: 50%;
-    padding: 1vh 2vw;
+    padding: 2vh 2vw;
     flex-grow: 1;
-    touch-action: manipulation;
+}
+
+.card h3{
+    margin-bottom: 10px;
+}
+
+span{
+    cursor: pointer;
 }
 
 /* Most popular transition */
 
-#mostPopular .card{
+#mostPopular .card {
     border: 1px solid #c7bb75;
-    color: #e2e2e2;
-    background: transparent;
-    transition: color, background .9s;
+    transition: box-shadow .1s ease-in;
 }
 
-#mostPopular .card:hover{
-    color: #131313;
-    background: #c7bb75;
+#mostPopular .card:hover {
+    box-shadow: 0 0 10px #c7bb75;
 }
 
 /* Secondary transition */
 
-#secondary .card{
+#secondary .card {
     border: 1px solid #89ad69;
-    color: #e2e2e2;
-    background: transparent;
-    transition: color, background .9s;
+    transition: box-shadow .1s ease-in;
 }
 
-#secondary .card:hover{
-    color: #131313;
-    background: #89ad69;
+#secondary .card:hover {
+    box-shadow: 0 0 10px #9ed170;
 }
 
 /* Others transition */
 
-#others .card{
+#others .card {
     border: 1px solid #61b393;
-    color: #e2e2e2;
-    background: transparent;
-    transition: color, background .9s;
+    transition: box-shadow .1s ease-in;
 }
 
-#others .card:hover{
-    color: #131313;
-    background: #61b393;
+#others .card:hover {
+    box-shadow: 0 0 10px #85ddbb;
 }
 
 /* Media */
 
-@media (min-width:768px){
-    .card{
+@media (min-width:768px) {
+    .card {
         width: 40%;
     }
 }
 
-@media (min-width:1200px){
-    .card{
+@media (min-width:1200px) {
+    .card {
         width: 30%;
     }
 }
