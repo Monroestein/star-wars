@@ -1,71 +1,89 @@
 
-// Getting data from API
+// Getting data from API and returns it
 
-function getData(idCharacter) {
-    let promise = fetch("https://swapi.dev/api/people/" + idCharacter)
+async function fetchingData (id) {
 
-    promise
-        .then(response => {
+    let id = 3;
+    
+    try {
 
-            console.log(response)
+        let response = await fetch("https://swapi.dev/api/people/" + id )
 
-            if (!response.ok) {
+        if (!response.ok){
 
-                if (response.status === 404) {
+            if (response.status === 404){
 
-                    alert(`Character not found.`)
-                    throw new Error(`Resource not found.`)
+                alert(`Character not found.`)
 
-                } else {
+                console.error(`Character not found.`, response.status)
 
-                    console.error(`HTTP Error`, response.status)
-                    throw new Error(`Couldn't obtain character.`)
-                }
+                throw new Error(`Resource not found.`)
+
             }
-            return response.json()
-        })
 
-        .then(data => {
-            console.log(data)
-            injectInfo(data)
-        })
+            else {
 
-        .catch(error => {
-            console.log(error)
-        })
-}
+                console.error(`HTTP Error`, response.status)
 
-// Injecting data to HTML.
-//      ! Fix the first going last when injecting other cards.
+                throw new Error(`Unable to get character.`)
 
-function injectInfo(character) {
+            }
+        }
 
-    const {name, height, mass} = character;
+        const data = await response.json(); // Returns a promise so we use await
 
-    let infoHTML = ` 
-    <div class="card">
-        <h3>${name}</h3>
-        <p>Height: ${height} m. | Mass: ${mass} kg.</p>
-    </div>
+        console.log(data)
+
+        injectingCard(data)
+
+    }
+
+    catch (error){
+
+        console.error(error)
+
+    }
+
+};
+
+
+
+// Injecting card into html
+
+function injectingCard(character){
+    
+    const {name, height, mass} = character
+
+    let cardHTML =  `
+                    <div class="card">
+                        <h3>${name}</h3>
+                        <p>Height: ${height} m. | Mass: ${mass} kg.</p>
+                    </div>
     `;
 
-    console.log(infoHTML)
+    if (id <= 5){
 
-    document.getElementById('mostPopular').innerHTML += infoHTML;
- }
+        document.getElementById('mostPopular').innerHTML += cardHTML;
 
-// I need to add event listener to button
+    } else if (id > 5 && id <= 10) {
 
-    // document.querySelector('.numbers').addEventListener('hover', injectInfo)
+        document.getElementById('secondary').innerHTML += cardHTML;
+
+    } else if (id >= 15){
+
+        document.getElementById('others').innerHTML += cardHTML;
+
+    } else {
+
+        console.error(`Unable to show character.`)
+
+    }
+
+    console.log(cardHTML)
+
+};
 
 
-// I need to make a loop until getData reaches 5
 
-// getData(1)
-// getData(6)
 
-/*
 
-*/
-
-// 1:41:58
