@@ -68,6 +68,10 @@ section {
     flex-grow: 1;
 }
 
+.def{
+    font-size: smaller;
+}
+
 .card h3{
     margin-bottom: 10px;
 }
